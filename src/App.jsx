@@ -5,6 +5,7 @@ function App() {
   const targetDate = new Date("2026-10-03T09:30:00");
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const isFinished = targetDate - new Date() <= 0;
 
   // PWA install prompt
   const [installPrompt, setInstallPrompt] = useState(null);
@@ -78,7 +79,15 @@ function App() {
 
   return (
     <div className="page">
-
+      {isFinished ? (
+        <video
+          className="end-video"
+          src="/play.mp4"
+          autoPlay
+          controls
+          playsInline
+        />
+      ) : (
       <div className="container">
 
         <div className="badge">
@@ -227,6 +236,7 @@ function App() {
         </div>
 
       </div>
+      )}
 
     </div>
   );
