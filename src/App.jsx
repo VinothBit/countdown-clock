@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const targetDate = new Date("2026-10-03T09:30:00");
+  const targetDate = new Date("2026-10-03T11:30:00");
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const isFinished = targetDate - new Date() <= 0;
